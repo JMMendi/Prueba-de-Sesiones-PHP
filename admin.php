@@ -1,20 +1,21 @@
 <?php
-    session_start();
+session_start();
 
-    if(!isset($_SESSION['usuarioFinal'])) {
-        header("Location:login.php");
-        die();
-    }
-    if (!$_SESSION['perfil']) {
-        header("Location:home.php");
-        die();
-    }
-    $user = $_SESSION['usuarioFinal'];
-    $perfil = ($_SESSION['perfil']) ? "Administrador" : "Usuario";
+if (!isset($_SESSION['usuarioFinal'])) {
+    header("Location:login.php");
+    die();
+}
+if (!$_SESSION['perfil']) {
+    header("Location:home.php");
+    die();
+}
+$user = $_SESSION['usuarioFinal'];
+$perfil = ($_SESSION['perfil']) ? "Administrador" : "Usuario";
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portal Web</title>
 </head>
+
 <body class="p-12 bg-purple-300">
     <h1 style='text-align:center'><b>Portal de Administrador</b></h1>
     <h2 style='text-align:center'>ALERTA! Gran cantidad de información y poderes sensible</h2>
@@ -32,7 +34,10 @@
 
         <a href="user.php" class="mx-10 px-10 py-1 rounded text-white bg-gray-500 hover:bg-gray-700 font-bold mr-2 ">Web Usuario</a>
 
+        <a href="home.php" class="mx-10 px-10 py-1 rounded text-white bg-green-500 hover:bg-green-700 font-bold mr-2 ">Portal Web</a>
+
     </div>
-    
+
 </body>
+
 </html>
